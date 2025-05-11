@@ -42,7 +42,7 @@ export default function IntroductionSection() {
           </h1>
 
           <p className="text-base text-[var(--color-text-light)] mb-4 sm:text-lg">
-            text
+            Front-End Developer with a focus on building practical, user-centered solutions. Creating responsive interfaces that enhance user experience and application performance.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 md:justify-start">
