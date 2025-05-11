@@ -7,6 +7,15 @@ module.exports = {
   ],
   darkMode: 'media', // or 'class' for manual dark mode toggling
   theme: {
+    screens: {
+      'xs': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'mid': '1173px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         // Use CSS variables from variables.css

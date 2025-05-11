@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Design View Placeholder</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #005F73;
+        }
+        .container {
+            width: 90%;
+            height: 90vh;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #005F73;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .hero {
+            background-color: #A1D6E2;
+            padding: 20px 15px;
+            text-align: center;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        .hero h2 {
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        .hero p {
+            margin-bottom: 0;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+        .card {
+            background-color: #F7F9F9;
+            border-radius: 4px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #1A3E5D;
+            border-radius: 50%;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+        .nav-item {
+            width: 20px;
+            height: 20px;
+            background-color: #A1D6E2;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Portfolio Design</h1>
+        </header>
+        <div class="content">
+            <div class="hero">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Front-end developer specializing in React and Next.js</p>
+            </div>
+            <div class="cards">
+                <div class="card"><div class="card-icon"></div></div>
+                <div class="card"><div class="card-icon"></div></div>
+                <div class="card"><div class="card-icon"></div></div>
+                <div class="card"><div class="card-icon"></div></div>
+            </div>
+            <div class="nav">
+                <div class="nav-item"></div>
+                <div class="nav-item"></div>
+                <div class="nav-item"></div>
+                <div class="nav-item"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
