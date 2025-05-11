@@ -1,18 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client";
 
-const socialLinks = [
-  {
-    name: "GitHub",
-    url: "https://github.com/MyroslavaBalyk",
-    icon: "/icons/github.svg",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/myroslava-balyk",
-    icon: "/icons/linkedin.svg",
-  },
-];
+import Link from "next/link";
+import { useEffect } from "react";
 
 const navigationLinks = [
   { name: "Home", path: "/" },
@@ -23,113 +12,64 @@ const navigationLinks = [
 ];
 
 export default function Footer() {
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <footer className="py-6 px-6 md:px-10 lg:px-16 bg-[var(--color-background)] w-full border-t border-[var(--color-accent)] dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3
-              className="
-              text-base font-semibold text-gray-800 dark:text-white 
-              relative inline-block mb-5 
-              after:content-[''] after:absolute after:bottom-[-8px] after:left-0 
-              after:w-10 after:h-[3px] after:bg-[var(--color-primary)] 
-              dark:after:bg-[var(--color-primary-light)]
-            "
+    <footer className="w-full relative mt-20">
+      <div className="absolute top-0 left-0 right-0 transform -translate-y-full overflow-hidden w-full">
+        <div className="w-full h-16 bg-white dark:bg-gray-900 relative">
+          <button
+            onClick={scrollToTop}
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-gray-100 dark:bg-gray-700 rounded-full -mb-7 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 z-10 cursor-pointer hover:scale-105"
+            aria-label="Scroll to top"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-gray-500 dark:text-gray-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Myroslava
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-2 text-xs">Front-End Developer</p>
-            <div className="flex gap-2">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.name}
-                  className="
-                    flex items-center justify-start w-6 h-6 rounded-full 
-                    bg-[var(--color-background)] dark:bg-gray-700 
-                    transition-all duration-300 hover:-translate-y-0.5 
-                    hover:bg-[var(--color-accent)] dark:hover:bg-[var(--color-primary-dark)]
-                  "
-                >
-                  <Image
-                    src={link.icon}
-                    alt={link.name}
-                    width={15}
-                    height={15}
-                    className="
-                      transition-all duration-300 filter 
-                      hover:brightness-110 dark:brightness-150 dark:hover:brightness-200
-                    "
-                  />
-                </a>
-              ))}
-            </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 15l7-7 7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div className="bg-gray-100 dark:bg-gray-800 py-8 px-6 md:px-10 lg:px-16 w-full">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {new Date().getFullYear()} Myroslava Balyk
+            </p>
           </div>
 
-          <div>
-            <h3
-              className="
-              text-sm font-semibold text-gray-800 dark:text-white 
-              relative inline-block mb-2 
-              after:content-[''] after:absolute after:bottom-[-6px] after:left-0 
-              after:w-8 after:h-[2px] after:bg-[var(--color-primary)] 
-              dark:after:bg-[var(--color-primary-light)]
-            "
-            >
-              Navigation
-            </h3>
-            <ul className="space-y-1">
+          <nav>
+            <ul className="flex flex-wrap gap-6 justify-center">
               {navigationLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     href={link.path}
-                    className="
-                      text-gray-600 dark:text-gray-300 text-xs 
-                      transition-all duration-300 inline-block relative 
-                      hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary-light)] 
-                      hover:-translate-y-0.5 
-                      after:content-[''] after:absolute after:w-0 after:h-0.5 
-                      after:bottom-[-2px] after:left-0 
-                      after:bg-[var(--color-primary)] dark:after:bg-[var(--color-primary-light)] 
-                      after:transition-all after:duration-300 hover:after:w-full
-                    "
+                    className="text-gray-500 dark:text-gray-400 text-sm transition-all duration-300 inline-block relative hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary-light)]"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <h3
-              className="
-              text-base font-semibold text-gray-800 dark:text-white 
-              relative inline-block mb-5 
-              after:content-[''] after:absolute after:bottom-[-8px] after:left-0 
-              after:w-10 after:h-[3px] after:bg-[var(--color-primary)] 
-              dark:after:bg-[var(--color-primary-light)]
-            "
-            >
-              Contact
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-1.5 text-sm">
-              Email: myroslava.balyk@gmail.com
-            </p>
-            <p className="text-gray-600 dark:text-gray-300 mb-1.5 text-sm">
-              Location: Vancouver, Canada
-            </p>
-          </div>
-        </div>
-
-        <div className="border-t border-gray-200 dark:border-gray-700 mt-5 pt-4 text-center text-gray-500 dark:text-gray-400">
-          <p className="text-sm opacity-80 hover:opacity-100 transition-opacity duration-300">
-            © {new Date().getFullYear()} Myroslava. All rights reserved.
-          </p>
+          </nav>
         </div>
       </div>
     </footer>
