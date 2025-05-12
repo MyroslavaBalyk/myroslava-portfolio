@@ -19,25 +19,37 @@ interface ProfileImageProps {
 }
 
 // Reusable profile image component
-const ProfileImage: React.FC<ProfileImageProps> = ({ src, alt, priority = false }) => (
-  <div
-    className={`
-      relative rounded-full border-[5px] border-white shadow-lg
-      overflow-hidden
-      w-[10.8rem] h-[10.8rem] sm:w-[14rem] sm:h-[14rem] md:w-[17.3rem] md:h-[17.3rem]
-      cursor-pointer transition-all duration-300 ease-in-out
-      hover:scale-125 hover:shadow-xl hover:z-10
-    `}
-  >
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      className="object-cover"
-      priority={priority}
-    />
-  </div>
-);
+const ProfileImage: React.FC<ProfileImageProps> = ({ src, alt, priority = false }) => {
+  const imageDimensions = {
+    width: 280,
+    height: 280,
+  };
+
+  return (
+    <div
+      className={`
+        relative rounded-full border-[5px] border-white shadow-lg
+        overflow-hidden
+        w-[10.8rem] h-[10.8rem] sm:w-[14rem] sm:h-[14rem] md:w-[17.3rem] md:h-[17.3rem]
+        cursor-pointer transition-all duration-300 ease-in-out
+        hover:scale-125 hover:shadow-xl hover:z-10
+        bg-gray-100 flex items-center justify-center
+      `}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 640px) 172px, (max-width: 768px) 224px, 277px"
+        className="object-cover"
+        priority={true} // Always use priority for hero images
+        loading="eager" // Force eager loading
+        placeholder="blur"
+        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2YzZjRmNiIvPjwvc3ZnPg=="
+      />
+    </div>
+  );
+};
 
 // Navigation buttons data
 const actionButtons: Array<ActionButton> = [
