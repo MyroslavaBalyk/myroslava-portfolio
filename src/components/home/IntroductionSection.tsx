@@ -3,15 +3,14 @@
 import Button from "../ui/Button";
 import Image from "next/image";
 
+// Constants
+const IMAGE_SIZES = {
+  sm: "172px",  // Mobile size
+  md: "224px",  // Tablet size
+  lg: "277px",  // Desktop size
+};
+
 // Types
-type ButtonVariant = "primary" | "secondary";
-
-interface ActionButton {
-  href: string;
-  variant: ButtonVariant;
-  label: string;
-}
-
 interface ProfileImageProps {
   src: string;
   alt: string;
@@ -19,42 +18,55 @@ interface ProfileImageProps {
 }
 
 // Reusable profile image component
-const ProfileImage: React.FC<ProfileImageProps> = ({ src, alt, priority = false }) => {
-  const imageDimensions = {
-    width: 280,
-    height: 280,
-  };
-
+const ProfileImage = ({ src, alt, priority = false }: ProfileImageProps) => {
   return (
-    <div
-      className={`
-        relative rounded-full border-[5px] border-white shadow-lg
-        overflow-hidden
-        w-[10.8rem] h-[10.8rem] sm:w-[14rem] sm:h-[14rem] md:w-[17.3rem] md:h-[17.3rem]
-        cursor-pointer transition-all duration-300 ease-in-out
-        hover:scale-125 hover:shadow-xl hover:z-10
-        bg-gray-100 flex items-center justify-center
-      `}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(max-width: 640px) 172px, (max-width: 768px) 224px, 277px"
-        className="object-cover"
-        priority={true} // Always use priority for hero images
-        loading="eager" // Force eager loading
-        placeholder="blur"
-        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2YzZjRmNiIvPjwvc3ZnPg=="
-      />
+    <div className="relative group">
+      {/* Outer container with gradient border effect */}
+      <div
+        className={`
+          relative rounded-full overflow-hidden
+          w-[11.3rem] h-[11.3rem] sm:w-[14.5rem] sm:h-[14.5rem] md:w-[17.8rem] md:h-[17.8rem]
+          p-[5px] /* Padding creates space for the border */
+          bg-gradient-to-br from-[var(--color-primary-light)] via-[var(--color-accent-2)] to-[var(--color-primary)]
+          shadow-lg
+          transition-all duration-300 ease-in-out
+          group-hover:shadow-xl group-hover:scale-105 group-hover:z-10
+        `}
+      >
+        {/* Inner container with the image */}
+        <div className="
+          relative w-full h-full rounded-full overflow-hidden
+          bg-[var(--color-accent-1)] flex items-center justify-center
+        ">
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            sizes={`(max-width: 640px) ${IMAGE_SIZES.sm}, (max-width: 768px) ${IMAGE_SIZES.md}, ${IMAGE_SIZES.lg}`}
+            className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+            priority={priority} // Use priority from props
+            loading="eager" // Force eager loading
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2YzZjRmNiIvPjwvc3ZnPg=="
+          />
+        </div>
+      </div>
+      
+      {/* Vibrant glow effect on hover */}
+      <div className="
+        absolute inset-0 rounded-full 
+        bg-gradient-to-br from-[var(--color-primary-light)] via-[var(--color-accent-3)] to-[var(--color-primary)]
+        opacity-0 blur-xl transition-opacity duration-500 ease-in-out
+        group-hover:opacity-40 -z-10
+      "></div>
     </div>
   );
 };
 
 // Navigation buttons data
-const actionButtons: Array<ActionButton> = [
-  { href: "/about", variant: "primary", label: "About Me" },
-  { href: "/contact", variant: "secondary", label: "Contact Me" },
+const actionButtons = [
+  { href: "/about", variant: "primary" as const, label: "About Me" },
+  { href: "/contact", variant: "secondary" as const, label: "Contact Me" },
 ];
 
 /**
@@ -64,7 +76,8 @@ const actionButtons: Array<ActionButton> = [
  */
 export default function IntroductionSection() {
   return (
-    <section className="py-8 sm:py-10 bg-[var(--color-background)]">
+    <section className="py-8 sm:py-10 bg-[var(--color-background-alt)]">
+      
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-6 md:gap-8 md:justify-between">
         {/* Profile Photo - Right side on desktop, top on mobile */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end mb-6 md:mb-0 order-1 md:order-2">

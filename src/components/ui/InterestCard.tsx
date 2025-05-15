@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
@@ -12,13 +11,14 @@ interface InterestCardProps {
   imageSize?: ImageSize;
 }
 
-const InterestCard: React.FC<InterestCardProps> = ({
+const InterestCard = ({
   title,
   description,
   imagePath,
   className = "",
   imageSize = "small",
-}) => {
+}: InterestCardProps) => {
+
   // Determine image size classes based on the imageSize prop
   const imageSizeClasses =
     imageSize === "large" ? "w-40 h-40" : "w-16 h-16 mb-4";
@@ -29,7 +29,7 @@ const InterestCard: React.FC<InterestCardProps> = ({
   return (
     <div
       className={`
-      bg-white dark:bg-gray-800 
+      bg-[var(--color-accent-1)] 
       p-5 rounded-lg 
       shadow-md hover:shadow-lg 
       transition-all duration-300 
@@ -70,7 +70,7 @@ const InterestCard: React.FC<InterestCardProps> = ({
 
         {/* Optional description */}
         {description && (
-          <p className="text-gray-700 dark:text-gray-300 text-sm text-center">
+          <p className="text-[var(--color-text-light)] text-sm text-center">
             {description}
           </p>
         )}

@@ -1,4 +1,4 @@
-import React from 'react';
+// ContentCard component for displaying content with a title
 
 interface ContentCardProps {
   title: string;
@@ -11,14 +11,14 @@ interface ContentCardProps {
  * A reusable card component for displaying content with a title
  * Used for various sections like skills, approach cards, etc.
  */
-const ContentCard: React.FC<ContentCardProps> = ({
+const ContentCard = ({
   title,
   children,
   className = '',
   titleClassName = 'text-xl font-semibold mb-4 text-[var(--color-primary)]'
-}) => {
+}: ContentCardProps) => {
   return (
-    <div className={`bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ${className}`}>
+    <div className={`bg-[var(--color-accent-1)] p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 ${className}`}>
       <h3 className={titleClassName}>
         {title}
       </h3>

@@ -1,32 +1,6 @@
-import React from 'react';
-import SectionHeading from '../../components/ui/SectionHeading';
-import SplitViewImage from '../../components/ui/SplitViewImage';
+import SectionHeading from '../ui/SectionHeading';
 
-// Types
-interface SkillCardProps {
-  title: string;
-  skills: string[];
-}
-
-/**
- * SkillCard Component
- *
- * Displays a card with a title and a list of skills.
- */
-const SkillCard: React.FC<SkillCardProps> = ({ title, skills }) => (
-  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-    <h3 className="text-lg font-medium mb-3 text-[var(--color-primary)]">
-      {title}
-    </h3>
-    <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-      {skills.map((skill, index) => (
-        <li key={index}>{skill}</li>
-      ))}
-    </ul>
-  </div>
-);
-
-// Data
+// Local data for designer and coder skills
 const designerSkills = [
   "Focus on user experience",
   "Create intuitive interfaces",
@@ -43,6 +17,32 @@ const coderSkills = [
   "Performance optimization",
 ];
 
+// Types
+interface SkillCardProps {
+  title: string;
+  skills: string[];
+}
+
+/**
+ * SkillCard Component
+ *
+ * Displays a card with a title and a list of skills.
+ */
+const SkillCard = ({ title, skills }: SkillCardProps) => (
+  <div className="bg-[var(--color-accent-1)] dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+    <h3 className="text-lg font-medium mb-3 text-[var(--color-primary)]">
+      {title}
+    </h3>
+    <ul className="list-disc list-inside space-y-2 text-[var(--color-text-main)]">
+      {skills.map((skill, index) => (
+        <li key={index}>{skill}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+
+
 const DesignerCoderSection = () => {
   return (
     <section className="mb-16">
@@ -51,7 +51,7 @@ const DesignerCoderSection = () => {
       </SectionHeading>
       <div className="flex flex-col mid:flex-row gap-8 mt-6">
         <div className="w-full mid:w-1/2">
-          <p className="text-gray-700 dark:text-gray-300 mb-6 text-lg">
+          <p className="text-[var(--color-text-main)] mb-6 text-lg">
             I combine design thinking with technical implementation to create
             effective solutions. I focus on building interfaces that work well
             for users while ensuring the code is structured for performance
@@ -63,7 +63,6 @@ const DesignerCoderSection = () => {
           </div>
         </div>
         <div className="w-full mid:w-1/2">
-          <SplitViewImage />
         </div>
       </div>
     </section>

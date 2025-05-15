@@ -1,5 +1,5 @@
-import React from 'react';
-import SectionHeading from '../../components/ui/SectionHeading';
+
+import SectionHeading from '../ui/SectionHeading';
 
 // Types
 interface EducationItemProps {
@@ -9,22 +9,22 @@ interface EducationItemProps {
   description: string;
 }
 
-const EducationItem: React.FC<EducationItemProps> = ({ 
+const EducationItem = ({ 
   degree, 
   institution, 
   period, 
   description 
-}) => (
-  <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+}: EducationItemProps) => (
+  <div className="bg-[var(--color-accent-1)] dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
     <div className="flex flex-col md:flex-row justify-between mb-4">
       <h3 className="text-xl font-semibold text-[var(--color-primary-dark)]">
         {degree}
       </h3>
-      <div className="text-gray-600 dark:text-gray-400">
+      <div className="text-[var(--color-text-light)]">
         <span className="font-medium">{institution}</span> | {period}
       </div>
     </div>
-    <p className="text-gray-700 dark:text-gray-300">
+    <p className="text-[var(--color-text-main)]">
       {description}
     </p>
   </div>

@@ -4,15 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
 import { usePathname } from "next/navigation";
-
-// Navigation links
-const navigationLinks = [
-  { name: "Home", path: "/" },
-  { name: "About Me", path: "/about" },
-  { name: "Experience", path: "/experience" },
-  { name: "Education", path: "/education" },
-  { name: "Contact", path: "/contact" },
-];
+import { navigationLinks } from "../../data/navigation";
 
 /**
  * Main navigation component
@@ -22,16 +14,17 @@ export default function Navbar() {
   return (
     <nav
       className="
-        w-full bg-white dark:bg-gray-900 shadow-sm
-        sticky top-0 z-40
+        w-full bg-[#D4E0EC] dark:from-gray-900 dark:to-[#0d1f2a] shadow-sm
+        sticky top-0 z-40 relative
       "
       aria-label="Main navigation"
     >
+      {/* Blue decorative line at the bottom of navbar */}
+      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--color-primary)]"></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
         <div className="flex justify-between h-[4.6rem]">
-          {" "}
           <div className="flex items-center pb-[10px]">
-            {" "}
             <Link
               href="/"
               className="
@@ -51,7 +44,6 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex items-center">
-            {" "}
             {/* Navigation container */}
             <nav className="hidden md:block md:ml-6">
               <ul className="flex space-x-4 md:space-x-6 lg:space-x-8">
@@ -67,9 +59,10 @@ export default function Navbar() {
                         focus:outline-none
                         font-[var(--font-vollkorn-sc)]
                         min-w-[80px] text-center
+                        relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-primary)] after:transition-all after:duration-300 after:ease-in-out
                         ${pathname === link.path 
-                          ? 'text-[var(--color-primary)] bg-gray-100 dark:bg-gray-800 dark:text-[var(--color-primary-light)]' 
-                          : 'hover:text-[var(--color-primary)] hover:bg-gray-100 dark:hover:bg-gray-800'}
+                          ? 'text-[var(--color-primary)] after:w-full' 
+                          : 'hover:text-[var(--color-primary)] after:w-0 hover:after:w-full'}
                       `}
                     >
                       {link.name}
