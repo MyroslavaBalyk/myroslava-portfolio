@@ -1,22 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-// Navigation links
-const navigationLinks = [
-  { name: "Home", path: "/" },
-  { name: "About Me", path: "/about" },
-  { name: "Experience", path: "/experience" },
-  { name: "Education", path: "/education" },
-  { name: "Contact", path: "/contact" },
-];
+import { navigationLinks } from "../../data/navigation";
 
 // SVG icon components
 const MenuIcon = () => (
   <svg
-    className="w-6 h-6 text-gray-700 dark:text-gray-300"
+    className="w-6 h-6 text-[var(--color-primary-dark)]"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -33,7 +25,7 @@ const MenuIcon = () => (
 
 const CloseIcon = () => (
   <svg
-    className="w-6 h-6 text-gray-700 dark:text-gray-300"
+    className="w-6 h-6 text-[var(--color-primary-dark)]"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -58,6 +50,20 @@ export default function MobileMenu() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Prevent body scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
 
   return (
     <div className="md:hidden">
@@ -85,7 +91,7 @@ export default function MobileMenu() {
           <div
             className="
               fixed right-0 top-0 h-full w-64 
-              bg-white dark:bg-gray-900 
+              bg-[var(--color-accent-1)] 
               shadow-lg p-5 
               transform transition-transform duration-300 ease-in-out
             "
@@ -122,8 +128,8 @@ export default function MobileMenu() {
                         text-center
                         ${
                           pathname === link.path
-                            ? "text-[var(--color-primary)] bg-gray-100 dark:bg-gray-800 dark:text-[var(--color-primary-light)]"
-                            : "hover:text-[var(--color-primary)] hover:bg-gray-100 dark:hover:bg-gray-800"
+                            ? "text-[var(--color-primary)] bg-gray-100"
+                            : "hover:text-[var(--color-primary)] hover:bg-gray-100"
                         }
                       `}
                       onClick={toggleMenu}

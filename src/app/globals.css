@@ -6,6 +6,6 @@
 @tailwind utilities;
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-primary-dark);
+  background-color: var(--color-background-alt);
+  color: var(--color-text-main);
 }

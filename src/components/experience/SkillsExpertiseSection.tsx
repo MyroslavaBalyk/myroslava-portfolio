@@ -1,5 +1,33 @@
-import SectionHeading from '../../components/ui/SectionHeading';
-import ContentCard from '../../components/ui/ContentCard';
+import SectionHeading from '../ui/SectionHeading';
+import ContentCard from '../ui/ContentCard';
+
+// Define skill data
+const technicalSkills = [
+  "HTML5, CSS3, JavaScript (ES6+)",
+  "React.js, Next.js, TypeScript",
+  "Responsive Web Design",
+  "CSS Frameworks (Tailwind CSS, Bootstrap)",
+  "Version Control (Git/GitHub)",
+  "Performance Optimization"
+];
+
+const softSkills = [
+  "Problem Solving & Critical Thinking",
+  "Attention to Detail",
+  "Team Collaboration",
+  "Time Management",
+  "Communication",
+  "Adaptability & Continuous Learning"
+];
+
+// Reusable skill list component
+const SkillList = ({ skills }: { skills: string[] }) => (
+  <ul className="list-disc list-inside space-y-2 text-[var(--color-text-main)]">
+    {skills.map((skill, index) => (
+      <li key={index}>{skill}</li>
+    ))}
+  </ul>
+);
 
 const SkillsExpertiseSection = () => {
   return (
@@ -10,25 +38,11 @@ const SkillsExpertiseSection = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <ContentCard title="Technical Skills">
-          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-            <li>HTML5, CSS3, JavaScript (ES6+)</li>
-            <li>React.js, Next.js, TypeScript</li>
-            <li>Responsive Web Design</li>
-            <li>CSS Frameworks (Tailwind CSS, Bootstrap)</li>
-            <li>Version Control (Git/GitHub)</li>
-            <li>Performance Optimization</li>
-          </ul>
+          <SkillList skills={technicalSkills} />
         </ContentCard>
          
         <ContentCard title="Soft Skills">
-          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Problem Solving & Critical Thinking</li>
-            <li>Attention to Detail</li>
-            <li>Team Collaboration</li>
-            <li>Time Management</li>
-            <li>Communication</li>
-            <li>Adaptability & Continuous Learning</li>
-          </ul>
+          <SkillList skills={softSkills} />
         </ContentCard>
       </div>
     </section>

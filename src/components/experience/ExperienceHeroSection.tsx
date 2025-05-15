@@ -1,4 +1,4 @@
-import SectionHeading from '../../components/ui/SectionHeading';
+import SectionHeading from '../ui/SectionHeading';
 
 const ExperienceHeroSection = () => {
   return (
@@ -12,7 +12,7 @@ const ExperienceHeroSection = () => {
         >
           Experience
         </SectionHeading>
-        <p className="text-gray-700 dark:text-gray-300 mt-6 mb-4 text-lg">
+        <p className="text-[var(--color-text-main)] mt-6 mb-4 text-lg">
           My professional journey as a front-end developer, showcasing my skills, expertise, 
           and work experience. I'm passionate about creating intuitive, responsive, and accessible web applications 
           that deliver exceptional user experiences.

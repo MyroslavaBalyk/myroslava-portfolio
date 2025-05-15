@@ -1,6 +1,6 @@
-import React from 'react';
-import SectionHeading from '../../components/ui/SectionHeading';
-import InterestCard from '../../components/ui/InterestCard';
+
+import SectionHeading from '../ui/SectionHeading';
+import InterestCard from '../ui/InterestCard';
 
 // Types
 interface Interest {
@@ -49,7 +49,7 @@ const InterestsSection = () => {
       <SectionHeading align="left" withAccent={true}>
         Beyond Coding
       </SectionHeading>
-      <p className="text-gray-600 dark:text-gray-400 text-lg font-semibold mb-6 -mt-2 ml-1">
+      <p className="text-[var(--color-text-light)] text-lg font-semibold mb-6 -mt-2 ml-1">
         My Interests & Hobbies
       </p>
 

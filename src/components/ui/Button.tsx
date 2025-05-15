@@ -29,31 +29,14 @@ export default function Button({
   ariaLabel,
   disabled = false,
 }: ButtonProps) {
+  // Variant styles using CSS variables for consistency
   const variantStyles = {
-    primary: `
-      bg-[var(--color-primary)] text-white 
-      hover:bg-[var(--color-primary-dark)] 
-      focus:ring-[var(--color-primary)]
-      dark:bg-[var(--color-primary)] dark:text-white
-    `,
-    secondary: `
-      bg-white text-gray-800 border border-gray-300 
-      hover:bg-gray-100 
-      focus:ring-gray-400
-      dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700
-    `,
+    primary: "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] focus:ring-[var(--color-primary)] dark:bg-[var(--color-primary)] dark:text-white",
+    secondary: "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 focus:ring-gray-400 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700",
   };
 
-  const buttonClasses = `
-    px-6 py-3 rounded-md 
-    transition duration-300 
-    shadow-md font-medium 
-    inline-flex items-center justify-center 
-    focus:outline-none focus:ring-2 focus:ring-opacity-50 
-    ${variantStyles[variant]} 
-    ${disabled ? "opacity-60 cursor-not-allowed" : ""} 
-    ${className}
-  `;
+  // Common button classes combined with variant-specific styles
+  const buttonClasses = `px-6 py-3 rounded-md transition duration-300 shadow-md font-medium inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-opacity-50 ${variantStyles[variant]} ${disabled ? "opacity-60 cursor-not-allowed" : ""} ${className}`;
 
   // Common props for all button types
   const commonProps = {
