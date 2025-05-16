@@ -10,7 +10,6 @@ export default function HomePage() {
         <DesignerCoderSection />
       </div>
       {/* Blue decorative line after DesignerCoderSection */}
-      <div className="w-full h-0.5 bg-[var(--color-primary)] my-8"></div>
       <div className="w-full max-w-7xl mx-auto">
         <SkillsSection />
       </div>
