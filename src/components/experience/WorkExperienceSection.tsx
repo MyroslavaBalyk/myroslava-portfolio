@@ -4,6 +4,7 @@ import SectionHeading from '../ui/SectionHeading';
 interface ExperienceItem {
   title: string;
   company: string;
+  companyUrl?: string;
   period: string;
   responsibilities: string[];
 }
@@ -12,25 +13,17 @@ interface ExperienceItem {
 const experienceData: ExperienceItem[] = [
   {
     title: "Front-End Developer",
-    company: "Company Name",
-    period: "2022 - Present",
+    company: "Cyberiny Corp.",
+    companyUrl: "https://www.cyberiny.com",
+    period: "October 2024 – Present",
     responsibilities: [
       "Developed responsive web applications using React and Next.js",
       "Implemented UI/UX designs with Tailwind CSS",
+      "Migrated from Bootstrap v3 to v5, enhancing performance and modern standards",
       "Collaborated with back-end developers to integrate APIs",
       "Optimized application performance and accessibility",
-      "Participated in code reviews and mentored junior developers"
-    ]
-  },
-  {
-    title: "Web Developer Intern",
-    company: "Internship Company",
-    period: "2021 - 2022",
-    responsibilities: [
       "Assisted in developing and maintaining client websites",
       "Created responsive layouts using HTML, CSS, and JavaScript",
-      "Learned modern front-end frameworks and best practices",
-      "Participated in team meetings and contributed to project planning"
     ]
   }
 ];
@@ -38,6 +31,7 @@ const experienceData: ExperienceItem[] = [
 const ExperienceCard = ({ 
   title, 
   company, 
+  companyUrl,
   period, 
   responsibilities 
 }: ExperienceItem) => (
@@ -47,7 +41,15 @@ const ExperienceCard = ({
         {title}
       </h3>
       <div className="text-[var(--color-text-light)]">
-        <span className="font-medium">{company}</span> | {period}
+        <span className="font-medium">
+          {companyUrl ? (
+            <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+              {company}
+            </a>
+          ) : (
+            company
+          )}
+        </span> | {period}
       </div>
     </div>
     <ul className="list-disc list-inside space-y-2 text-[var(--color-text-main)]">

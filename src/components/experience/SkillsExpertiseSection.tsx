@@ -3,8 +3,8 @@ import ContentCard from '../ui/ContentCard';
 
 // Define skill data
 const technicalSkills = [
-  "HTML5, CSS3, JavaScript (ES6+)",
   "React.js, Next.js, TypeScript",
+  "HTML5, CSS3, JavaScript",
   "Responsive Web Design",
   "CSS Frameworks (Tailwind CSS, Bootstrap)",
   "Version Control (Git/GitHub)",
