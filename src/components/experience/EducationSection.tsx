@@ -31,18 +31,37 @@ const EducationItem = ({
 );
 
 const EducationSection = () => {
+  // Add your education items here
+  const educationItems: EducationItemProps[] = [
+    // Add your education items in this array
+    // Example:
+    // {
+    //   degree: "Your Degree",
+    //   institution: "Institution Name",
+    //   period: "Year - Year",
+    //   description: "Description of your education"
+    // }
+  ];
+
+  if (educationItems.length === 0) {
+    return null; // Don't render the section if there are no education items
+  }
+
   return (
     <section className="mb-16">
       <SectionHeading align="left" withAccent={true}>
         Education
       </SectionHeading>
       
-      <EducationItem 
-        degree="Bachelor's Degree in Computer Science"
-        institution="University Name"
-        period="2018 - 2022"
-        description="Graduated with honors. Specialized in web development and user interface design. Participated in various coding competitions and hackathons."
-      />
+      {educationItems.map((item, index) => (
+        <EducationItem 
+          key={index}
+          degree={item.degree}
+          institution={item.institution}
+          period={item.period}
+          description={item.description}
+        />
+      ))}
     </section>
   );
 };
