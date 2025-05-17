@@ -20,7 +20,7 @@ const SkillCard = ({ title, skills }: SkillSet) => (
 
 const DesignerCoderSection = () => {
   return (
-    <section className="py-8 sm:py-10 mb-16">
+    <section className="py-8 sm:py-10">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
         <SectionHeading align="left" withAccent={true}>
           Part designer & Part coder
