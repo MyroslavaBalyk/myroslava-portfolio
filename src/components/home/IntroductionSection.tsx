@@ -76,9 +76,8 @@ const actionButtons = [
  */
 export default function IntroductionSection() {
   return (
-    <section className="py-8 sm:py-10 bg-[var(--color-background-alt)]">
-      
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-6 md:gap-8 md:justify-between">
+    <section className="pt-16 sm:pt-20  bg-[var(--color-background-alt)]">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16 md:justify-between">
         {/* Profile Photo - Right side on desktop, top on mobile */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end mb-6 md:mb-0 order-1 md:order-2">
           <ProfileImage 
@@ -100,7 +99,7 @@ export default function IntroductionSection() {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 md:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center md:justify-start">
             {actionButtons.map((button) => (
               <Button
                 key={button.href}
@@ -111,7 +110,14 @@ export default function IntroductionSection() {
               </Button>
             ))}
           </div>
+
+
         </div>
+      </div>
+      
+      {/* Simple decorative line */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16 my-10">
+        <div className="h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary)] to-transparent opacity-70"></div>
       </div>
     </section>
   );
