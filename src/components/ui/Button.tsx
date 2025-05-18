@@ -31,8 +31,8 @@ export default function Button({
 }: ButtonProps) {
   // Variant styles using CSS variables for consistency
   const variantStyles = {
-    primary: "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] focus:ring-[var(--color-primary)] dark:bg-[var(--color-primary)] dark:text-white",
-    secondary: "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 focus:ring-gray-400 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700",
+    primary: "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] focus:ring-[var(--color-primary)]",
+    secondary: "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 focus:ring-gray-400",
   };
 
   // Common button classes combined with variant-specific styles

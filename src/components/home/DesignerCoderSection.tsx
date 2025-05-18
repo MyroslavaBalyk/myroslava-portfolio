@@ -6,7 +6,7 @@ interface SkillSet {
   skills: string[];
 }
 const SkillCard = ({ title, skills }: SkillSet) => (
-  <div className="bg-[var(--color-accent-1)] dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+  <div className="bg-[var(--color-accent-1)] p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
     <h3 className="text-lg font-medium mb-3 text-[var(--color-primary-dark)]">
       {title}
     </h3>
