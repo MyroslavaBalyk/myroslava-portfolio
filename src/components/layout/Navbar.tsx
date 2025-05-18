@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <nav
       className="
-        w-full bg-[#D4E0EC] dark:from-gray-900 dark:to-[#0d1f2a] shadow-sm
+        w-full bg-[var(--color-navbar-bg)] shadow-sm
         sticky top-0 z-40 relative
       "
       aria-label="Main navigation"

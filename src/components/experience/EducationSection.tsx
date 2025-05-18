@@ -15,7 +15,7 @@ const EducationItem = ({
   period, 
   description 
 }: EducationItemProps) => (
-  <div className="bg-[var(--color-accent-1)] dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+  <div className="bg-[var(--color-accent-1)] p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
     <div className="flex flex-col md:flex-row justify-between mb-4">
       <h3 className="text-xl font-semibold text-[var(--color-primary-dark)]">
         {degree}

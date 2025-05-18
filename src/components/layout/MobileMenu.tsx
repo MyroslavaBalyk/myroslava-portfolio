@@ -121,7 +121,7 @@ export default function MobileMenu() {
           aria-hidden="true"
         >
           <div
-            className="fixed right-0 top-0 h-screen w-72 bg-[#C7D6E5] dark:from-gray-800 dark:to-[#0a1a22] shadow-2xl p-6 overflow-y-auto transform transition-transform duration-300 ease-in-out border-l-2 border-[var(--color-primary)] bg-opacity-95 translate-x-0"
+            className="fixed right-0 top-0 h-screen w-72 bg-[#C7D6E5] shadow-2xl p-6 overflow-y-auto transform transition-transform duration-300 ease-in-out border-l-2 border-[var(--color-primary)] bg-opacity-95 translate-x-0"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
