@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { ReactNode, MouseEvent } from "react";
 
-// Button variants
 export type ButtonVariant = "primary" | "secondary";
 
-// Props interface
 export interface ButtonProps {
   href?: string;
   onClick?: (e: MouseEvent<HTMLElement>) => void;
@@ -16,9 +14,6 @@ export interface ButtonProps {
   disabled?: boolean;
 }
 
-/**
- * Button component that renders as a button, internal link, or external link
- */
 export default function Button({
   href,
   onClick,
@@ -29,16 +24,13 @@ export default function Button({
   ariaLabel,
   disabled = false,
 }: ButtonProps) {
-  // Variant styles using CSS variables for consistency
   const variantStyles = {
     primary: "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] focus:ring-[var(--color-primary)]",
     secondary: "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 focus:ring-gray-400",
   };
 
-  // Common button classes combined with variant-specific styles
   const buttonClasses = `px-6 py-3 rounded-md transition duration-300 shadow-md font-medium inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-opacity-50 ${variantStyles[variant]} ${disabled ? "opacity-60 cursor-not-allowed" : ""} ${className}`;
 
-  // Common props for all button types
   const commonProps = {
     className: buttonClasses,
     onClick: disabled ? undefined : onClick,
@@ -46,7 +38,6 @@ export default function Button({
     "aria-disabled": disabled,
   };
 
-  // External link
   if (href && external && !disabled) {
     return (
       <a
@@ -60,7 +51,6 @@ export default function Button({
     );
   }
 
-  // Internal link (Next.js Link)
   if (href && !disabled) {
     return (
       <Link href={href} {...commonProps}>
@@ -69,7 +59,6 @@ export default function Button({
     );
   }
 
-  // Default button
   return (
     <button 
       type="button" 

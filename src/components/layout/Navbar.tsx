@@ -34,7 +34,7 @@ export default function Navbar() {
               aria-label="Myroslava - Home"
             >
               <Image
-                src="/logo/logo-main.svg"
+                src="/logo/logo-animated.svg"
                 alt="Myroslava Logo"
                 width={140} 
                 height={140}

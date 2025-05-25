@@ -1,5 +1,3 @@
-// ContentCard component for displaying content with a title
-
 interface ContentCardProps {
   title: string;
   children: React.ReactNode;
@@ -7,10 +5,7 @@ interface ContentCardProps {
   titleClassName?: string;
 }
 
-/**
- * A reusable card component for displaying content with a title
- * Used for various sections like skills, approach cards, etc.
- */
+
 const ContentCard = ({
   title,
   children,

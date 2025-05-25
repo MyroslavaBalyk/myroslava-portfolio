@@ -1,6 +1,6 @@
-import IntroductionSection from '../components/home/IntroductionSection';
-import SkillsSection from '../components/home/SkillsSection';
-import DesignerCoderSection from '../components/home/DesignerCoderSection';
+import IntroductionSection from "../components/home/IntroductionSection";
+import SkillsSection from "../components/home/SkillsSection";
+import DesignerCoderSection from "../components/home/DesignerCoderSection";
 
 export default function HomePage() {
   return (
@@ -9,7 +9,6 @@ export default function HomePage() {
         <IntroductionSection />
         <DesignerCoderSection />
       </div>
-      {/* Blue decorative line after DesignerCoderSection */}
       <div className="w-full max-w-7xl mx-auto">
         <SkillsSection />
       </div>

@@ -1,4 +1,3 @@
-// SkillCard component for displaying skills with icons
 import Image from "next/image";
 
 interface SkillCardProps {
@@ -10,13 +9,6 @@ interface SkillCardProps {
   onClick?: () => void;
 }
 
-/**
- * SkillCard component
- * 
- * Displays a skill with an icon, name, and optional description
- * Used in the Skills section and other skill-related components
- */
-
 const SkillCard = ({
   name,
   iconPath,
@@ -25,8 +17,7 @@ const SkillCard = ({
   className = "",
   onClick,
 }: SkillCardProps) => {
-  // Use accent-1 color for all skill cards
-  const bgColor = 'bg-[var(--color-accent-1)]';  // Light neutral
+  const bgColor = 'bg-[var(--color-accent-1)]'; 
   return (
     <div
       className={`
