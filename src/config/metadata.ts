@@ -1,7 +1,3 @@
-/**
- * Centralized metadata configuration for the portfolio website
- * Used by Next.js for SEO optimization and browser tab information
- */
 import type { Metadata } from "next";
 
 export const siteMetadata: Metadata = {
@@ -16,6 +12,6 @@ export const siteMetadata: Metadata = {
     "typescript",
   ],
   icons: {
-    icon: { url: "/logo/logo-tab.svg" },
+    icon: { url: "/logo/logo-improved.svg" },
   },
 };

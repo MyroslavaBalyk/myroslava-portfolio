@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Myroslava's Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. This portfolio showcases my skills, experience, and projects with a clean, minimalist design featuring a consistent color scheme and subtle animations.
 
-First, run the development server:
+![Portfolio Preview](public/logo/logo-animated.svg)
 
+## 🚀 Features
+
+- **Modern Tech Stack**: Built with Next.js 15, React 19, TypeScript, and Tailwind CSS
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Component-Based Architecture**: Clean, maintainable code with reusable components
+- **Optimized Performance**: Fast loading times with Next.js image optimization
+- **Animated Elements**: Subtle animations and transitions for enhanced user experience
+- **Consistent Styling**: Unified color scheme with CSS variables
+
+## 🎨 Design System
+
+The portfolio uses a consistent color scheme throughout:
+
+- Primary dark: #1A3E5D (deep navy blue)
+- Primary: #005F73 (teal)
+- Primary light: #A1D6E2 (light blue)
+- Accent: #E3F9F9 (pale blue)
+- Background: #F7F9F9 (off-white)
+
+Additional accent colors include vibrant orange (#FF9551) and mint (#64CCC5) used in gradient elements.
+
+## 🧩 Project Structure
+
+```
+├── public/               # Static assets
+│   ├── beyond-coding/    # Beyond coding related assets
+│   ├── icons/            # Skill and social icons
+│   ├── logo/             # Logo files
+│   └── profile-photo/    # Profile photos
+├── src/
+│   ├── app/              # Next.js app router pages
+│   ├── components/       # React components
+│   │   ├── about/        # About page components
+│   │   ├── contact/      # Contact page components
+│   │   ├── experience/   # Experience page components
+│   │   ├── home/         # Home page components
+│   │   ├── layout/       # Layout components (Navbar, Footer)
+│   │   └── ui/           # Reusable UI components
+│   ├── config/           # Site configuration
+│   ├── data/             # Data files for skills, navigation
+│   ├── lib/              # Utility functions
+│   └── styles/           # Global styles
+```
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18.0 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/myroslava-portfolio.git
+cd myroslava-portfolio
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚢 Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project can be easily deployed to Vercel:
 
-## Learn More
+1. Push your code to a GitHub repository
+2. Import the project to Vercel
+3. Vercel will automatically detect Next.js and set up the build configuration
 
-To learn more about Next.js, take a look at the following resources:
+## 🧰 Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend Framework**: Next.js 15.3.1
+- **UI Library**: React 19.0.0
+- **Styling**: Tailwind CSS 3.3.2
+- **Language**: TypeScript 5
+- **Animation**: Framer Motion 12.11.0
+- **Utility Libraries**: clsx, tailwind-merge
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Code Principles
 
-## Deploy on Vercel
+This project follows several key principles:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **DRY (Don't Repeat Yourself)**: Centralized data structures and reusable components
+- **Component-Based Architecture**: Modular, reusable components
+- **Responsive Design**: Mobile-first approach with Tailwind's responsive utilities
+- **Accessibility**: Semantic HTML and proper ARIA attributes
+- **Performance Optimization**: Next.js image optimization and code splitting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

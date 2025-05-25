@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Comparison</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--color-background, #F7F9F9);
+            color: var(--color-text, #333);
+        }
+        h1 {
+            color: var(--color-primary-dark, #053B50);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .comparison {
+                flex-direction: row;
+            }
+        }
+        .logo-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 8px;
+            background-color: var(--color-accent-1, #EEEEEE);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo-container h2 {
+            margin-top: 0;
+            color: var(--color-primary, #176B87);
+        }
+        .logo-container svg {
+            width: 200px;
+            height: 200px;
+        }
+        .logo-details {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .logo-details h3 {
+            margin-bottom: 0.5rem;
+            color: var(--color-primary, #176B87);
+        }
+        .logo-details ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        :root {
+            --color-primary-dark: #053B50;
+            --color-primary: #176B87;
+            --color-primary-light: #64CCC5;
+            --color-accent: #EEEEEE;
+            --color-background: #F7F9F9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logo Comparison</h1>
+    
+    <div class="comparison">
+        <div class="logo-container">
+            <h2>Original Logo</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 302 286">
+                <path d="M66.2175 285H25.6378V121.44L66.2175 176.456V285Z" fill="#1A3E5D"/>
+                <path d="M229.986 285H189.406V176.456L229.986 121.44V285Z" fill="#1A3E5D"/>
+                <path d="M66.2175 285H25.6378V121.44L66.2175 176.456V285Z" stroke="#1A3E5D"/>
+                <path d="M229.986 285H189.406V176.456L229.986 121.44V285Z" stroke="#1A3E5D"/>
+                <path d="M123.464 240.393L1 58.9895L123.464 170.508L301 1L123.464 240.393Z" fill="#1A3E5D" stroke="#1A3E5D"/>
+            </svg>
+            <div class="logo-details">
+                <h3>Features:</h3>
+                <ul>
+                    <li>Deep navy blue color (#1A3E5D)</li>
+                    <li>Geometric design with sharp angles</li>
+                    <li>Flat design with no gradient or effects</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="logo-container">
+            <h2>Improved Logo</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 286" width="200" height="200">
+                <title>Myroslava Balyk Portfolio Logo</title>
+                <desc>Modern logo featuring geometric shapes with teal gradient</desc>
+                <defs>
+                    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#176B87" />
+                        <stop offset="100%" stop-color="#64CCC5" />
+                    </linearGradient>
+                    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" flood-color="#053B50"/>
+                    </filter>
+                </defs>
+                <path d="M66.2175 285H25.6378V121.44L66.2175 176.456V285Z" fill="url(#tealGradient)" filter="url(#shadow)"/>
+                <path d="M229.986 285H189.406V176.456L229.986 121.44V285Z" fill="url(#tealGradient)" filter="url(#shadow)"/>
+                <path d="M123.464 240.393L1 58.9895L123.464 170.508L301 1L123.464 240.393Z" fill="url(#tealGradient)" filter="url(#shadow)"/>
+            </svg>
+            <div class="logo-details">
+                <h3>Improvements:</h3>
+                <ul>
+                    <li>Teal gradient using portfolio colors (#176B87 to #64CCC5)</li>
+                    <li>Subtle drop shadow for depth</li>
+                    <li>Added accessibility with title and description</li>
+                    <li>Proper viewBox for better scaling</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

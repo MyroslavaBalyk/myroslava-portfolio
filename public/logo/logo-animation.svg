@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 286" width="302" height="286">
+  <title>Myroslava Balyk Portfolio Logo</title>
+  <desc>Modern logo featuring geometric shapes with teal gradient</desc>
+  <defs>
+    <linearGradient id="portfolioGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A3E5D" />
+      <stop offset="50%" stop-color="#005F73" />
+      <stop offset="100%" stop-color="#176B87" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" flood-color="#053B50"/>
+    </filter>
+  </defs>
+  <!-- Left stick with animation -->
+  <path id="leftStick" d="M66.2175 285H25.6378V121.44L66.2175 176.456V285Z" fill="url(#portfolioGradient)" filter="url(#shadow)">
+    <animate 
+      attributeName="d" 
+      dur="1.5s"
+      begin="0s"
+      values="M66.2175 350H25.6378V350L66.2175 350V350Z;
+              M66.2175 285H25.6378V121.44L66.2175 176.456V285Z"
+      fill="freeze" />
+    <animate
+      attributeName="opacity"
+      from="0"
+      to="1"
+      dur="1.2s"
+      begin="0s"
+      fill="freeze" />
+  </path>
+  
+  <!-- Right stick with animation -->
+  <path id="rightStick" d="M229.986 285H189.406V176.456L229.986 121.44V285Z" fill="url(#portfolioGradient)" filter="url(#shadow)">
+    <animate 
+      attributeName="d" 
+      dur="1.5s"
+      begin="0s"
+      values="M229.986 350H189.406V350L229.986 350V350Z;
+              M229.986 285H189.406V176.456L229.986 121.44V285Z"
+      fill="freeze" />
+    <animate
+      attributeName="opacity"
+      from="0"
+      to="1"
+      dur="1.2s"
+      begin="0s"
+      fill="freeze" />
+  </path>
+  
+  <!-- Animated check mark -->
+  <path id="checkmark" d="M123.464 240.393L1 58.9895L123.464 170.508L301 1L123.464 240.393Z" fill="url(#portfolioGradient)" filter="url(#shadow)">
+    <animate 
+      attributeName="d" 
+      dur="1.5s"
+      begin="0s"
+      values="M123.464 -50L123.464 -50L123.464 -50L123.464 -50L123.464 -50Z;
+              M123.464 240.393L1 58.9895L123.464 170.508L301 1L123.464 240.393Z"
+      fill="freeze" />
+    <animate
+      attributeName="opacity"
+      from="0"
+      to="1"
+      dur="1.2s"
+      begin="0s"
+      fill="freeze" />
+  </path>
+</svg>

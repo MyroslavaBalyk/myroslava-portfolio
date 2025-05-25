@@ -1,5 +1,3 @@
-// SectionHeading component for consistent section titles across the portfolio
-
 type HeadingAlignment = 'left' | 'center' | 'right';
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -12,11 +10,7 @@ interface SectionHeadingProps {
   as?: HeadingLevel;
   id?: string;
 }
-/**
- * SectionHeading component
- * 
- * A reusable heading component with customizable alignment, accent line, and heading level
- */
+
 export default function SectionHeading({ 
   children, 
   className = '',
@@ -26,20 +20,20 @@ export default function SectionHeading({
   as: Component = 'h2',
   id,
 }: SectionHeadingProps) {
-  // Text alignment classes
+  
   const alignmentClass = {
     left: 'text-left',
     center: 'text-center',
     right: 'text-right',
   }[align];
   
-  // Accent color classes
+  
   const accentColorClass = {
     primary: 'bg-[var(--color-primary)]',
     secondary: 'bg-[var(--color-primary-dark)]',
   }[accentColor];
   
-  // Accent position based on alignment
+  
   const accentPositionClass = {
     left: '',
     center: 'left-1/2 -translate-x-1/2',

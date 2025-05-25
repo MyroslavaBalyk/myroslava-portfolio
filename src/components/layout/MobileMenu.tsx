@@ -83,9 +83,6 @@ const MenuLink = ({
   </Link>
 );
 
-/**
- * Mobile menu component with hamburger button and slide-out navigation
- */
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -94,7 +91,6 @@ export default function MobileMenu() {
     setIsOpen(!isOpen);
   };
 
-  // Prevent body scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -102,7 +98,6 @@ export default function MobileMenu() {
       document.body.style.overflow = 'auto';
     }
     
-    // Cleanup function to reset overflow when component unmounts
     return () => {
       document.body.style.overflow = 'auto';
     };
@@ -134,7 +129,7 @@ export default function MobileMenu() {
                 className="focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] rounded-full p-1"
               >
                 <Image
-                  src="/logo/logo-main.svg"
+                  src="/logo/logo-animated.svg"
                   alt="Myroslava Logo"
                   width={40}
                   height={40}
