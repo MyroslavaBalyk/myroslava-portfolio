@@ -34,7 +34,7 @@ const CircularImage = ({
     <div
       className={cn(
         "relative rounded-full overflow-hidden",
-        "bg-[var(--color-primary-light)]",
+        "bg-[var(--color-accent-1)]",
         "shadow-lg transition-all duration-300",
         withHoverEffect && "hover:shadow-xl hover:z-10 hover:scale-105",
         sizeClasses[size],
@@ -50,6 +50,10 @@ const CircularImage = ({
         fill
         sizes={size === "small" ? "4rem" : size === "medium" ? "6rem" : "10rem"}
         className={cn("object-cover", className)}
+        loading="eager"
+        quality={80}
+        placeholder="blur"
+        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM2NENDQzUiLz48L3N2Zz4="
       />
     </div>
   );
