@@ -76,7 +76,7 @@ export default function IntroductionSection() {
 
         <div className="w-full md:w-1/2 text-center md:text-left order-2 md:order-1">
           <h1 className="text-3xl font-bold mb-3.5 leading-tight sm:text-4xl md:text-[2.7rem]">
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="text-[var(--color-primary)]">Myroslava</span>
           </h1>
 

@@ -40,7 +40,7 @@ const MenuButton = ({
   isOpen?: boolean;
   className?: string;
   children: React.ReactNode;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => (
   <button
     onClick={onClick}

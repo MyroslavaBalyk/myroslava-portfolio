@@ -14,7 +14,7 @@ const ExperienceHeroSection = () => {
         </SectionHeading>
         <p className="text-[var(--color-text-main)] mt-6 mb-4 text-lg">
           My professional journey as a front-end developer, showcasing my skills, expertise, 
-          and work experience. I'm passionate about creating intuitive, responsive, and accessible web applications 
+          and work experience. I&apos;m passionate about creating intuitive, responsive, and accessible web applications 
           that deliver exceptional user experiences.
         </p>
       </div>
