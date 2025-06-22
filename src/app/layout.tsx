@@ -3,7 +3,6 @@ import "./globals.css";
 
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-import SplashScreen from "../components/layout/SplashScreen";
 import { fontVariables } from "../styles/fonts";
 import { siteMetadata } from "../config/metadata";
 
@@ -24,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${fontVariables} antialiased bg-[var(--color-background-alt)] min-h-screen flex flex-col`}
       >
-        <SplashScreen duration={3000} />
+
         <Navbar />
         <main className="flex-grow relative">{children}</main>
         <div className="w-full h-0.5 bg-[var(--color-primary)]"></div>

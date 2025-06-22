@@ -45,7 +45,7 @@ export default function SectionHeading({
       id={id} 
       className={`
         text-3xl md:text-4xl font-bold mb-8 
-        text-[var(--color-text-main)] 
+        text-[var(--color-primary-dark)] 
         font-[var(--font-vollkorn-sc)]
         ${alignmentClass}
         ${withAccent ? 'relative pb-4' : ''}
