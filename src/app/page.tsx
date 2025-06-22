@@ -10,11 +10,13 @@ export default function HomePage() {
   const [showSplash, setShowSplash] = useState(false);
   
   useEffect(() => {
-    const hasSeenSplash = localStorage.getItem('hasSeenSplash');
-    
-    if (!hasSeenSplash) {
-      setShowSplash(true);
-      localStorage.setItem('hasSeenSplash', 'true');
+    if (typeof window !== 'undefined') {
+      const hasSeenSplash = localStorage.getItem('hasSeenSplash');
+      
+      if (!hasSeenSplash) {
+        setShowSplash(true);
+        localStorage.setItem('hasSeenSplash', 'true');
+      }
     }
   }, []);
   

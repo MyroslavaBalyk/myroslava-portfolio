@@ -17,6 +17,11 @@ export default function SplashScreen({ duration = 3000 }: SplashScreenProps) {
     return () => clearTimeout(timer);
   }, [duration]);
   
+  useEffect(() => {
+    return () => {
+    };
+  }, []);
+  
   if (!isVisible) return null;
   
   return (
