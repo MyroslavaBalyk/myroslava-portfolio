@@ -11,11 +11,14 @@ export default function HomePage() {
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const hasSeenSplash = localStorage.getItem('hasSeenSplash');
+      const hasSeenSplash = sessionStorage.getItem('hasSeenSplash') || localStorage.getItem('hasSeenSplash');
       
       if (!hasSeenSplash) {
         setShowSplash(true);
+        sessionStorage.setItem('hasSeenSplash', 'true');
         localStorage.setItem('hasSeenSplash', 'true');
+      } else {
+        setShowSplash(false);
       }
     }
   }, []);

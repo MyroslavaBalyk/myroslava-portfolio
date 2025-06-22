@@ -10,17 +10,14 @@ export default function SplashScreen({ duration = 3000 }: SplashScreenProps) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    // Set a timeout to hide the splash screen after the duration
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, duration);
     
+    // Clean up the timer if the component unmounts
     return () => clearTimeout(timer);
   }, [duration]);
-  
-  useEffect(() => {
-    return () => {
-    };
-  }, []);
   
   if (!isVisible) return null;
   
