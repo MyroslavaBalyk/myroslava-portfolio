@@ -10,12 +10,10 @@ export default function SplashScreen({ duration = 3000 }: SplashScreenProps) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Set a timeout to hide the splash screen after the duration
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, duration);
     
-    // Clean up the timer if the component unmounts
     return () => clearTimeout(timer);
   }, [duration]);
   
@@ -24,18 +22,11 @@ export default function SplashScreen({ duration = 3000 }: SplashScreenProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-sm animate-fadeIn">
       <div className="w-64 h-64 md:w-80 md:h-80 relative">
-        <object
-          type="image/svg+xml"
-          data="/logo/logo-animation.svg"
+        <img 
+          src="/logo/logo-animation.svg" 
+          alt="Myroslava Balyk Portfolio Logo" 
           className="w-full h-full"
-          aria-label="Myroslava Balyk Portfolio Logo"
-        >
-          <img 
-            src="/logo/logo-animation.svg" 
-            alt="Myroslava Balyk Portfolio" 
-            className="w-full h-full"
-          />
-        </object>
+        />
       </div>
     </div>
   );
