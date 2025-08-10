@@ -3,8 +3,6 @@ import SectionHeading from '../ui/SectionHeading';
 // Types
 interface ExperienceItem {
   title: string;
-  company: string;
-  companyUrl?: string;
   period: string;
   responsibilities: string[];
 }
@@ -13,8 +11,6 @@ interface ExperienceItem {
 const experienceData: ExperienceItem[] = [
   {
     title: "Front-End Developer",
-    company: "Cyberiny Corp.",
-    companyUrl: "https://www.cyberiny.com",
     period: "October 2024 – Present",
     responsibilities: [
       "Developed responsive web applications using React and Next.js",
@@ -30,8 +26,6 @@ const experienceData: ExperienceItem[] = [
 
 const ExperienceCard = ({ 
   title, 
-  company, 
-  companyUrl,
   period, 
   responsibilities 
 }: ExperienceItem) => (
@@ -41,15 +35,7 @@ const ExperienceCard = ({
         {title}
       </h3>
       <div className="text-[var(--color-text-light)]">
-        <span className="font-medium">
-          {companyUrl ? (
-            <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
-              {company}
-            </a>
-          ) : (
-            company
-          )}
-        </span> | {period}
+        <span className="font-medium">{period}</span>
       </div>
     </div>
     <ul className="list-disc list-inside space-y-2 text-[var(--color-text-main)]">
